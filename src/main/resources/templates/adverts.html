@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adverts</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h3>User Adverts Details</h3>
+
+    <div>
+        Logged in user: <b th:inline="text" class="user">[[${#httpServletRequest.remoteUser}]]</b>
+        <form th:action="@{/app-logout}" method="post">
+            <input type="submit" value="Logout"/>
+        </form>
+    </div>
+    <br/>
+    <table>
+        <tr th:each="advert : ${userAdverts}">
+            <td th:text="${advert.advertId}">Id</td>
+            <td th:text="${advert.title}">title</td>
+            <td th:text="${advert.description}">Description</td>
+        </tr>
+    </table>
+</body>
+</html>

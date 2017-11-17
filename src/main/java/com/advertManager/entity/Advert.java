@@ -21,6 +21,7 @@ public class Advert implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "date")
     private Date dateOfPost;
 
